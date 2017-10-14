@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="/add_new">Add a new blog post!</a>
+<hr />
+    
+    {% if not posts %}
+        <p>No blog posts yet</p>
+        {% else %}
+        <ul>
+            {% for post in posts %}
+            <li>
+                <h4><a href='./ind_blog?id={{post.id}}'>{{ post.title }}</a></h4>
+                <p>{{ post.content }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+{% endblock %}

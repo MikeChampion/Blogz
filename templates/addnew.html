@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="/">Return to Home</a>
+<hr />
+    <h3>Add a new blog post</h3>
+    <div class="container">
+    <form action='/blog_submit' method='post' id=blog>
+        <center>
+            <label name='blog-title' for= 'blog title'>
+            <strong>Title:</strong>
+            <input type='text' id='blog title' title='blog title' name='blog-title' value="{{ request.form['blog-title'] }}"/>
+        </label>
+        </center>
+        <p class="error">{{ title_error }}</p>
+        <p>
+            <input type="submit" value='Add Post' />
+        </p>
+        <p class="error">{{ content_error }}</p>
+        <label name='blog-content' for='blogcontent' value="{{ request.form['blog-content'] }}">
+        <textarea id='blog content' title='blog content' cols='50' rows='7' name='blog-content' form=blog value="{{ request.form['blog-content'] }}"></textarea>
+        </label>
+    </form>
+    
+    </div>
+    <hr />
+
+    
+{% endblock %}
