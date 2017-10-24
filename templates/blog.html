@@ -2,20 +2,18 @@
 
 {% block content %}
 
-<a href="/add_new">Add a new blog post!</a>
-<hr />
-    
+<h3>Posts</h3>    
     {% if not posts %}
         <p>No blog posts yet</p>
         {% else %}
-        <ul>
-            {% for post in posts %}
-            <li>
-                <h4><a href='./ind_blog?id={{post.id}}'>{{ post.title }}</a></h4>
-                <p>{{ post.content }}</p>
-            </li>
-            {% endfor %}
-        </ul>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <h4><a href='./ind_blog?id={{post.id}}'>{{ post.title }}</a> - {{ post.owner.username}}</h4>
+            <p>{{ post.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
 
     {% endif %}
 {% endblock %}

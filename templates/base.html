@@ -37,8 +37,19 @@
     </head>
 <body>
     <center><h1>Bloggz</h1></center>
+    {% if not session.username %}
+    <br>
+    <a href="/register">Register for an account!</a>
+    <br>
+    <a href="/login">Login!</a>
+    <hr />
 
+    {% else %}
+    <br><strong>Welcome, {{ session.username }} </strong>(<a href="/logout">Logout</a>)
+    <br><a href="/">Author Home</a>  --  <a href="/posts">Posts Home</a> -- <a href="/add_new">Add a new blog post!</a>
+    <hr />
 
+    {% endif %}
     {% block content %}
     {% endblock %}
 

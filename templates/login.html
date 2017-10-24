@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h3>Please sign in</h3>
+    <form action="/log_val" method="post">
+        <div>
+            <label for="username">Username:<font color='red'>*</font></label>
+            <input id="username" name='user-name' type="text" title="Enter your username, 3 to 20 characters" value="{{ request.form['user-name'] }}"/>
+        </div>
+        <p class="error">{{ username_error }}</p>
+        <div>
+            <label for="password">Password:<font color='red'>*</font></label>
+            <input id="password" type="password" name="password" title="Password must be between 3 and 20 characters" />
+        </div>
+        <p></p>
+        <div>
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+    </div>
+{% endblock %}

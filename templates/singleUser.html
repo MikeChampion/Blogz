@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Posts</h3>    
+{% if not posts %}
+    <p>No blog posts yet</p>
+    {% else %}
+<ul>
+    {% for post in posts %}
+    <li>
+        <h4><a href='./ind_blog?id={{post.id}}'>{{ post.title }}</a></h4>
+        <p>{{ post.content }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+{% endblock %}
+We will also add a singleUser.html template that will be used to display only the blogs associated with a single given author. It will be used when we dynamically generate a page using a GET request with a user query parameter on the /blog route (similar to how we dynamically generated individual blog entry pages in the last assignment).

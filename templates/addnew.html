@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a href="/">Return to Home</a>
-<hr />
+
     <h3>Add a new blog post</h3>
     <div class="container">
     <form action='/blog_submit' method='post' id=blog>
@@ -21,7 +20,7 @@
         <textarea id='blog content' title='blog content' cols='50' rows='7' name='blog-content' form=blog value="{{ request.form['blog-content'] }}"></textarea>
         </label>
     </form>
-    
+    <textarea id='blog content' title='blog content' cols='50' rows='7' name='blog-content' form=blog value="{{ request.form['blog-content'] }}"></textarea>
     </div>
     <hr />
 
